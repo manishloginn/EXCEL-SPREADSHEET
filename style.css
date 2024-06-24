@@ -11,6 +11,7 @@ body {
     grid-template-columns: 40px auto;
     grid-template-rows: 30px auto;
     overflow-x: scroll;
+    overflow-y: scroll;
     box-sizing: border-box;
     
 
