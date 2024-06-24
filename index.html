@@ -12,8 +12,8 @@
   </head>
   <body>
     <section class="options">
-      <form class="form-container">
-        <select name="fontFamily" id="">
+      <form class="form-container" id="optionform">
+        <select name="fontFamily" id="fontFamily">
           <option value="default">Default</option>
         </select>
         <input type="number" name="fontSize" value="16" id="fontSize" />
@@ -33,29 +33,29 @@
         </div>
         <div class="align-container">
           <div>
-            <input type="radio" name="align" value="left" id="left" />
+            <input type="radio" name="align" checked value="left" id="left" />
             <label for="left" class="material-icons">format_align_left</label>
           </div>
           <div>
-            <input type="radio" name="align" value="center" id="center" />
-            <label for="center" class="material-icons"
+            <input type="radio" name="align"  value="center" id="center" />
+            <label for="center" class="material-icons" 
               >format_align_center</label
             >
           </div>
           <div>
-            <input type="radio" name="align" value="right" id="right" />
+            <input type="radio" name="align"  value="right" id="right" />
             <label for="right" class="material-icons">format_align_right</label>
           </div>
         </div>
         <div class="colorContainer">
           <div>
-            <input type="color" name="textColor" id="textColor" />
+            <input type="color" name="textColor" id="textColor" value="#000000" />
             <label for="textColor" class="material-icons"
               >format_color_text</label
             >
           </div>
           <div>
-            <input type="color" name="backgroungColor" id="backgroungColor" />
+            <input type="color" name="backgroungColor" id="backgroungColor" value="#ffffff"/>
             <label for="backgroungColor" class="material-icons"
               >format_color_fill</label
             >
@@ -66,11 +66,11 @@
         <div class="selected-cell">
             NA
         </div>
-        <input type="text" placeholder="Evaluate Expression" />
+        <input id="EvaluateBox" value="" type="text" placeholder="Evaluate Expression" />
       </div>
     </section>
     <section class="container">
-      <div class="plate"></div>
+      <div id="plate" class="plate"></div>
       <div id="headrow" class="headrow"></div>
       <div id="sno" class="sno"></div>
       <div class="body" id="bodyy"></div>
