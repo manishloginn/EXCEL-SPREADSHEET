@@ -36,16 +36,20 @@ for (let i = 1; i <=rows; i++) {
       
         
         cell.addEventListener("keyup", (e) => {
-            e.preventDefault();
-            let nextcell = document.getElementById(`${String.fromCharCode(j+64)}${i+1}`)  
-            let content = cell.innerText  
+            // e.preventDefault();
+            let nextcell = document.getElementById(`${String.fromCharCode(j+64)}${i+1}`) 
+            let currentCell = document.getElementById(`${String.fromCharCode(j+64)}${i}`) ;
+            let content = cell.innerText             
             try {
                 if (e.code === "Enter" || e.code == "NumpadEnter" && selectedCell) {
                     if (content.trim() == "") {
                         selectedCell.innerText = "";
                         nextcell.focus()
                         return;
-                    } 
+                    } if (content.length > 0) {
+                        nextcell.focus();
+                    }
+
                      else {
                         let value = content.trim();
                         let result = eval(value)
@@ -64,7 +68,11 @@ for (let i = 1; i <=rows; i++) {
             }
            
         })
+
+        cell.addEventListener('input', (e) => onChange(e));
         
+
+     
     }
 
     bodyy.appendChild(rows)
