@@ -46,10 +46,7 @@ for (let i = 1; i <=rows; i++) {
                         selectedCell.innerText = "";
                         nextcell.focus()
                         return;
-                    } if (content.length > 0) {
-                        nextcell.focus();
-                    }
-
+                    } 
                      else {
                         let value = content.trim();
                         let result = eval(value)
