@@ -38,8 +38,10 @@ for (let i = 1; i <=rows; i++) {
         cell.addEventListener("keyup", (e) => {
             // e.preventDefault();
             let nextcell = document.getElementById(`${String.fromCharCode(j+64)}${i+1}`) 
-            let currentCell = document.getElementById(`${String.fromCharCode(j+64)}${i}`) ;
-            let content = cell.innerText             
+            let arrowUp = document.getElementById(`${String.fromCharCode(j+64)}${i-1}`) 
+            let ArrowLeft = document.getElementById(`${String.fromCharCode(j+63)}${i}`)
+            let ArrowRight = document.getElementById(`${String.fromCharCode(j+65)}${i}`)
+            let content = cell.innerText
             try {
                 if (e.code === "Enter" || e.code == "NumpadEnter" && selectedCell) {
                     if (content.trim() == "") {
@@ -57,9 +59,22 @@ for (let i = 1; i <=rows; i++) {
                         selectedCell.innerText = result
                         nextcell.focus()
                     }
-                    
+                   
                    
                 }
+                if (e.code === "ArrowUp") {
+                    arrowUp.focus()
+                }
+                if (e.code === "ArrowDown") {
+                    nextcell.focus()
+                }
+                if (e.code === "ArrowLeft") {
+                    ArrowLeft.focus()
+                }
+                if (e.code === "ArrowRight") {
+                    ArrowRight.focus()
+                }
+                console.log(e)
             } catch (error) {
                 return
             }
